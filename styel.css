@@ -1,0 +1,33 @@
+body{
+    margin: 0px;
+}
+
+.fruits{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price{
+    display: flex;
+}
+
+.app span{
+    border: 1px solid black;
+    padding: 0px 14px;
+    
+}
+.man span{
+    border: 1px solid black;
+    padding: 0px 14px;
+    
+}
+.ban span{
+    border: 1px solid black;
+    padding: 0px 14px;
+    
+}
+.orn span{
+    border: 1px solid black;
+    padding: 0px 14px;
+    
+}
