@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <script src="java.js"></script>
     <title>Fruit Store</title>
 </head>
 <body>
     <div class="container">
+
+
         <div class="range">
             <h1>Fruit Store</h1>
-            <span class="">Max Amount </span>
+            <span class="">Budget </span>
+            <input class="max-budget" type="text" placeholder="Enter Budget">
+            <a href="#"><button onclick="submit()">Sumbit Budget</button></a>
         </div>
-        <input class="max-budget" type="text">
+
+
         <div class="fruits">
             <div class="app-ban">
                 <div class="app">
@@ -22,19 +28,21 @@
                         <img src="images/apples.jpg" alt="apple">
                     </div>
                     <div class="btn">
-                        <button  onclick="fruitInc(1)">+</button><span class="countOfApple"></span><button onclick="fruitDec(1)">-</button>
+                        <button  onclick="fruitInc('apples')">+</button><span class="countOfApple"></span><button onclick="fruitDec('apples')">-</button>
                     </div>
                 </div>
+
                 <div class="ban">
                     <div class="price">
                         <strong>Rs.5</strong>
-                        <img src="images/ban.jpg" alt="banana">
+                        <img src="images/bananas.jpg" alt="banana">
                     </div>
                     <div class="btn">
-                        <button onclick="fruitInc(2)">+</button><span class="countOfBanana"></span><button onclick="fruitDec(2)">-</button>
+                        <button onclick="fruitInc('bananas')">+</button><span class="countOfBanana"></span><button onclick="fruitDec('bananas')">-</button>
                     </div>
                 </div>
             </div>
+
             <div class="man-orn">
                 <div class="man">
                     <div class="price">
@@ -42,28 +50,36 @@
                         <img src="images/mangoes.jpg" alt="mango">
                     </div>
                     <div class="btn">
-                        <button  onclick="fruitInc(3)">+</button><span class="countOfMango"></span><button onclick="fruitDec(3)">-</button>
+                        <button  onclick="fruitInc('mangoes')">+</button><span class="countOfMango"></span><button onclick="fruitDec('mangoes')">-</button>
                     </div> 
                 </div>
+
                 <div class="orn">
                     <div class="price">
                         <strong>Rs.17</strong>
                         <img src="images/oranges.jpg" alt="orange">
                     </div>
                     <div class="btn">
-                        <button onclick="fruitInc(4)">+</button><span class="countOfOrange"></span><button onclick="fruitDec(4)">-</button>
+                        <button onclick="fruitInc('oranges')">+</button><span class="countOfOrange"></span><button onclick="fruitDec('oranges')">-</button>
                     </div>   
                 </div>
+                
             </div>
         </div>
       
         
         <div class="calculation">
+            <div class="sp1">
             <span>Total Amount</span>
             <span class="total">0</span>
+            </div>
+            <div class="sp2">
             <span>Balance Amount</span>
-            <span class="balance"></span>
+            <span class="balance">0</span>
+            </div>
         </div>
+
+
     </div>
 </body>
 </html>

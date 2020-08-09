@@ -1,14 +1,126 @@
+*{
+    font-family: 'Lobster', cursive;
+}
 body{
     margin: 0px;
+    /* background-color: #185c6b96; */
+    background-image: url(images/backimg0.jpg);
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+
+}
+.fruits{
+  
+    position: relative;
+}
+h1{
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 0px;
+    color: black;
+    margin-bottom: 10px;
+}
+.range{
+    text-align: center;
+    padding-top: 25px;
+}
+.calculation{
+    text-align: center;
+    padding: 30px;
+    position: absolute;
+    top: 76%;
+    left: 38%;
+    padding-bottom: 0px;
+}
+.calculation span{
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+}
+@media screen and (max-width:480px){
+    .calculation{
+        top: 160%;
+         left: 29%;
+        padding: 0px;
+    }
+    .calculation span{
+        font-size: 1.2rem;
+       
+    }
+}
+
+@media screen and (min-width:481px) and  (max-width:768px) {
+    .calculation{
+        top: 116%;
+        left: 39%;
+        padding: 0px;
+    }
+    .calculation span{
+        font-size: 1.2rem;
+       
+    }
+}
+
+button{
+    background: #4b8888;
+    height: 41px;
+    margin: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover{
+    color: blanchedalmond;
+    background-color: #185c6b96;
+}
+button:focus{
+    outline: none;
+}
+input{
+    width: 217px;
+    height: 27px;
+    text-align: center;
+}
+
+
+img{
+    background-color: #185c6b96;
+    width: 220px;
+    height: 220px;
+    padding: 16px;
+    position: relative;
+}
+strong{
+    position: absolute;
+    background: #076969;
+    padding: 14px 4px;
+    z-index: 1;
+    color: white;
+    margin: 0px 4px;
+    box-shadow:6px 9px 8px 0px rgba(0,0,0,1);
+    font-weight: unset; 
+}
+@media screen and (max-width:480px){
+    strong{
+        padding: 9px 2px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:480px){
+    img{
+        width: 90px;
+        height: 150px;
+    }
 }
 
 .fruits{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .price{
     display: flex;
+    flex-direction: column;
 }
 
 .app span{
@@ -30,4 +142,7 @@ body{
     border: 1px solid black;
     padding: 0px 14px;
     
+}
+.app, .man,.ban, .orn{
+    margin: 40px 0px;
 }

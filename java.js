@@ -11,197 +11,147 @@ let priceOfApple = 10;
 let priceOfBanana = 5;
 let priceOfMango = 12;
 let priceOfOrange = 17;
-let totalAppleAmount = 0;
-let totalBananaAmount = 0;
-let totalMangoAmount = 0;
-let totalOrangeAmount = 0;
-let totalFruitOfAmount = 0;
 
 
 
+//get budget input value 
 
-function fruitInc(fruit){
-    console.log(fruit);
-    if(fruit==1){
-        quantityOfApple++;
-        budget = document.querySelector(".max-budget").value;
-        appleAmount = quantityOfApple*priceOfApple;
-    
-        
-                document.querySelector(".balance").innerHTML=budget-appleAmount;
-                document.querySelector(".countOfApple").innerHTML=quantityOfApple;
-                document.querySelector(".total").innerHTML=appleAmount;
-                totalAppleAmount = appleAmount;
-        
-
-        console.log(budget);
-        console.log(appleAmount);
-
+function submit(){
+    budget = document.querySelector('.max-budget').value;
+    console.log(budget);
+    if(budget == ''){
+        alert('Enter your budget');
     }
-    if(fruit==2){
-        quantityOfBanana++;
-        budget = document.querySelector(".max-budget").value;
-        bananaAmount = quantityOfBanana*priceOfBanana;
-    
-    
-            document.querySelector(".balance").innerHTML=budget-bananaAmount;
-            document.querySelector(".countOfBanana").innerHTML=quantityOfBanana;
-            document.querySelector(".total").innerHTML=bananaAmount;
-            totalBananaAmount = bananaAmount;
-    
-
-        console.log(budget);
-        console.log(bananaAmount);
-        
+    else{
+        budget =parseInt(budget);
+        balance = document.querySelector(".balance");
+        balance.innerHTML = budget;
     }
-    if(fruit==3){
-        quantityOfMango++;
-        budget = document.querySelector(".max-budget").value;
-        mangoAmount = quantityOfMango*priceOfMango;
-    
-      
-    
-            document.querySelector(".balance").innerHTML=budget-mangoAmount;
-            document.querySelector(".countOfMango").innerHTML=quantityOfMango;
-            document.querySelector(".total").innerHTML=mangoAmount;
-            totalMangoAmount = mangoAmount;
-    
-    
-        console.log(budget);
-        console.log(mangoAmount);
-        
-    }
-        if(fruit==4){
-        quantityOfOrange++;
-        budget = document.querySelector(".max-budget").value;
-        orangeAmount = quantityOfOrange*priceOfOrange;
-    
-    
-            document.querySelector(".balance").innerHTML=budget-orangeAmount;
-            document.querySelector(".countOfOrange").innerHTML=quantityOfOrange;
-            document.querySelector(".total").innerHTML=orangeAmount;
-            totalOrangeAmount = orangeAmount;
-
-    
-    
-        console.log(budget);
-        console.log(orangeAmount);
-        
-    }
-    
-    totalFruitOfAmount = totalAppleAmount+totalMangoAmount+totalBananaAmount+totalOrangeAmount;
-    console.log("totalAmount"+totalFruitOfAmount)
-    if(budget >= totalFruitOfAmount){
-        document.querySelector(".total").innerHTML=totalFruitOfAmount;  
-
-    }else{
-        alert("you cannot buy more");
-      
-    }
-
-    let remainingBalance = budget-totalAppleAmount-totalMangoAmount-totalBananaAmount-totalOrangeAmount;
-    document.querySelector(".balance").innerHTML= remainingBalance;
-
 }
 
+//add fruits by on click function
 
+function fruitInc(fruit_name) {  
+    submt = document.querySelector('.max-budget').value;
 
+    if (fruit_name =='apples') {
+        if (priceOfApple <= submt ) {
+            document.querySelector('.countOfApple').innerHTML = ++quantityOfApple;
+            total += priceOfApple;
+            budget -= priceOfApple;
+           
 
+        }
 
-
-
-
-
-
-
-    function fruitDec(fruit){
-    if(fruit==1){
-        if(quantityOfApple>0){
-
-            quantityOfApple--;
-            budget = document.querySelector(".max-budget").value;
-            appleAmount = quantityOfApple*priceOfApple;
-        //    if(budget >= appleAmount){
-               
-            document.querySelector(".balance").innerHTML=budget-appleAmount;    
-            document.querySelector(".countOfApple").innerHTML=quantityOfApple;
-            document.querySelector(".total").innerHTML=appleAmount;
-       
-        //    }
-        //    else{
-              
-        //    }
-           console.log(budget);
-            console.log(appleAmount);
+        else{
+            alert('you cannot buy');
         }
     }
-  
 
-    if(fruit==2){
-     if(quantityOfBanana>0){
+    else if (fruit_name =='bananas') {
+        if (priceOfBanana <= submt) {
+            document.querySelector('.countOfBanana').innerHTML = ++quantityOfBanana;
+            total += priceOfBanana;
+            budget -= priceOfBanana;
 
-         quantityOfBanana--;
-         budget = document.querySelector(".max-budget").value;
-         bananaAmount = quantityOfBanana*priceOfBanana;
-        // if(budget >= bananaAmount){
-            
-         document.querySelector(".balance").innerHTML=budget-bananaAmount;    
-         document.querySelector(".countOfBanana").innerHTML=quantityOfBanana;
-         document.querySelector(".total").innerHTML=bananaAmount;
-    
-        // }
-        // else{
-           
-        // }
-        console.log(budget);
-         console.log(bananaAmount);
-      }
+        }
+
+        else{
+            alert('you cannot buy');
+        }
     }
 
-    if(fruit==3){
-        if(quantityOfMango>0){
-   
-            quantityOfMango--;
-            budget = document.querySelector(".max-budget").value;
-            mangoAmount = quantityOfMango*priceOfMango;
-        //    if(budget >= mangoAmount){
-               
-            document.querySelector(".balance").innerHTML=budget-mangoAmount;    
-            document.querySelector(".countOfMango").innerHTML=quantityOfMango;
-            document.querySelector(".total").innerHTML=mangoAmount;
-       
-        //    }
-        //    else{
-              
-        //    }
-           console.log(budget);
-            console.log(mangoAmount);
-         }
-       }
+    
+    else if (fruit_name =='mangoes') {
+        if (priceOfMango <= submt) {
+            document.querySelector('.countOfMango').innerHTML = ++quantityOfMango;
+            total += priceOfMango;
+            budget -= priceOfMango;
 
-       if(fruit==4){
-        if(quantityOfOrange>0){
-   
-            quantityOfOrange--;
-            budget = document.querySelector(".max-budget").value;
-            orangeAmount = quantityOfOrange*priceOfOrange;
-        //    if(budget >= orangeAmount){
-            
-            document.querySelector(".balance").innerHTML=budget-orangeAmount;    
-            document.querySelector(".countOfOrange").innerHTML=quantityOfOrange;
-            document.querySelector(".total").innerHTML=orangeAmount;
-       
-        //    }
-        //    else{
-              
-        //    }
-           console.log(budget);
-            console.log(orangeAmount);
-         }
-       }
-       let totalFruitOfAmount = appleAmount+mangoAmount+bananaAmount+orangeAmount;
-        document.querySelector(".total").innerHTML=totalFruitOfAmount;
+        }
 
-        let remainingBalance = budget+totalAppleAmount+totalMangoAmount+totalBananaAmount+totalOrangeAmount;
-        document.querySelector(".balance").innerHTML=remainingBalance; 
+        else{
+            alert('you cannot buy');
+        }
+    }
+
+    else if (fruit_name =='oranges') {
+        if (priceOfOrange <= submt) {
+            document.querySelector('.countOfOrange').innerHTML = ++quantityOfOrange;
+            total += priceOfOrange;
+            budget -= priceOfOrange;
+
+        }
+
+        else{
+            alert('you cannot buy');
+        }
+    }
+    document.querySelector('.total').innerHTML = total;
+    balance.innerHTML = budget;
 }
+
+
+
+//remove fruit by on click
+
+
+function fruitDec(fruit_name) {  
+    submt = document.querySelector('.max-budget').value;
+
+    
+        if (fruit_name =='apples') {
+            if (quantityOfApple > 0 ) {
+                document.querySelector('.countOfApple').innerHTML = --quantityOfApple;
+                total -= priceOfApple;
+                budget += priceOfApple;
+    
+            }
+    
+            else{
+                alert('you can buy');
+            }
+        }
+        else if (fruit_name =='mangoes') {
+            if (quantityOfMango > 0 ) {
+                document.querySelector('.countOfMango').innerHTML = --quantityOfMango;
+                total -= priceOfMango;
+                budget += priceOfMango;
+    
+            }
+    
+            else{
+                alert('you can buy');
+            }
+        }
+
+        else if (fruit_name =='bananas') {
+            if (quantityOfBanana > 0) {
+                document.querySelector('.countOfBanana').innerHTML = --quantityOfBanana;
+                total -= priceOfBanana;
+                budget += priceOfBanana;
+    
+            }
+    
+            else{
+                alert('you can buy');
+            }
+        }
+
+        else if (fruit_name =='oranges') {
+            if (quantityOfOrange > 0) {
+                document.querySelector('.countOfOrange').innerHTML = --quantityOfOrange;
+                total -= priceOfOrange;
+                budget += priceOfOrange;
+    
+            }
+    
+            else{
+                alert('you can buy');
+            }
+        }
+
+        document.querySelector('.total').innerHTML = total;
+        balance.innerHTML = budget;
+}    
+        
