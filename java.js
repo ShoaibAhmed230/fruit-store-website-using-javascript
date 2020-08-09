@@ -33,60 +33,68 @@ function submit(){
 
 function fruitInc(fruit_name) {  
     submt = document.querySelector('.max-budget').value;
+    if(submt > total){
 
-    if (fruit_name =='apples') {
-        if (priceOfApple <= submt ) {
-            document.querySelector('.countOfApple').innerHTML = ++quantityOfApple;
-            total += priceOfApple;
-            budget -= priceOfApple;
-           
+        if (fruit_name =='apples') {
 
+            if (priceOfApple <= submt ) {
+                document.querySelector('.countOfApple').innerHTML = ++quantityOfApple;
+                total += priceOfApple;
+                budget -= priceOfApple;
+            
+
+            }
+
+            else{
+                alert('you cannot buy');
+            }
         }
 
-        else{
-            alert('you cannot buy');
-        }
-    }
+        else if (fruit_name =='bananas') {
+            if (priceOfBanana <= submt) {
+                document.querySelector('.countOfBanana').innerHTML = ++quantityOfBanana;
+                total += priceOfBanana;
+                budget -= priceOfBanana;
+            
 
-    else if (fruit_name =='bananas') {
-        if (priceOfBanana <= submt) {
-            document.querySelector('.countOfBanana').innerHTML = ++quantityOfBanana;
-            total += priceOfBanana;
-            budget -= priceOfBanana;
 
-        }
+            }
 
-        else{
-            alert('you cannot buy');
-        }
-    }
-
-    
-    else if (fruit_name =='mangoes') {
-        if (priceOfMango <= submt) {
-            document.querySelector('.countOfMango').innerHTML = ++quantityOfMango;
-            total += priceOfMango;
-            budget -= priceOfMango;
-
+            else{
+                alert('you cannot buy');
+            }
         }
 
-        else{
-            alert('you cannot buy');
-        }
-    }
+        
+        else if (fruit_name =='mangoes') {
+            if (priceOfMango <= submt) {
+                document.querySelector('.countOfMango').innerHTML = ++quantityOfMango;
+                total += priceOfMango;
+                budget -= priceOfMango;
 
-    else if (fruit_name =='oranges') {
-        if (priceOfOrange <= submt) {
-            document.querySelector('.countOfOrange').innerHTML = ++quantityOfOrange;
-            total += priceOfOrange;
-            budget -= priceOfOrange;
+            }
 
+            else{
+                alert('you cannot buy');
+            }
         }
 
-        else{
-            alert('you cannot buy');
+        else if (fruit_name =='oranges') {
+            if (priceOfOrange <= submt) {
+                document.querySelector('.countOfOrange').innerHTML = ++quantityOfOrange;
+                total += priceOfOrange;
+                budget -= priceOfOrange;
+
+            }
+
+            else{
+                alert('you cannot buy');
+            }
         }
-    }
+    }  
+    else{
+        alert('you cannot buy more')
+    } 
     document.querySelector('.total').innerHTML = total;
     balance.innerHTML = budget;
 }
